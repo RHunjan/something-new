@@ -11,10 +11,13 @@ var questionArray = [
 let currentScore = 0;
  let currentQuestion = 0;
 
+
 // Timer
   var timeEl = document.getElementById("timer");
   var initialMinutes = 5;
   let timeSeconds = initialMinutes *60;
+ 
+ 
 
   var countDown = function(){
     let minutes = Math.floor(timeSeconds / 60);
@@ -26,6 +29,7 @@ let currentScore = 0;
       }
     timeEl.innerHTML = `${minutes}: ${seconds}`;
     timeSeconds--;
+   
   };
 
   setInterval(countDown, 1000);
@@ -59,9 +63,10 @@ var displayCurrentQuestion = function(){
       messageToUser.textContent = "RIGHT!";
       currentQuestion++
       displayCurrentQuestion();
-    } else {
+      } else {
       messageToUser.textContent = "WRONG!";
-      seconds = seconds - 15;
+        console.log(timeSeconds);
+        timeSeconds = timeSeconds-15;
       currentQuestion++
       displayCurrentQuestion();
     }
@@ -73,8 +78,10 @@ var displayCurrentQuestion = function(){
       messageToUser.textContent = "RIGHT!";
       currentQuestion++
       displayCurrentQuestion();
+      
     } else {
       messageToUser.textContent = "WRONG!";
+       timeSeconds = timeSeconds-15;
       currentQuestion++
       displayCurrentQuestion();
     }
@@ -88,6 +95,7 @@ var displayCurrentQuestion = function(){
       displayCurrentQuestion();
     } else {
       messageToUser.textContent = "WRONG!";
+       timeSeconds = timeSeconds-15;
       currentQuestion++
       displayCurrentQuestion();
     }
@@ -101,6 +109,7 @@ var displayCurrentQuestion = function(){
       displayCurrentQuestion();
     } else {
       messageToUser.textContent = "WRONG!";
+       timeSeconds = timeSeconds-15;
       currentQuestion++
       displayCurrentQuestion();
     }
