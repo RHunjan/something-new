@@ -51,26 +51,65 @@ var displayCurrentQuestion = function(){
 
 // check answers
   var checkAnswers = function(){
+     var messageToUser = document.getElementById("message");
 
-    var messageToUser = document.getElementById("message");
+     // check button A
      answerAEl.addEventListener("click", function(){
-    //console.log(answerAEl.id);
-    //console.log(questionArray[currentQuestion].correctAnswer)
-    if (answerAEl.id === questionArray[currentQuestion].correctAnswer){
-      console.log('correct')
+      if (answerAEl.id === questionArray[currentQuestion].correctAnswer){
       messageToUser.textContent = "RIGHT!";
       currentQuestion++
-       displayCurrentQuestion();
+      displayCurrentQuestion();
     } else {
-      console.log('incorrect');
+      messageToUser.textContent = "WRONG!";
+      seconds = seconds - 15;
+      currentQuestion++
+      displayCurrentQuestion();
+    }
+ }); // end of check button B
+ 
+     // check button B
+     answerBEl.addEventListener("click", function(){
+      if (answerBEl.id === questionArray[currentQuestion].correctAnswer){
+      messageToUser.textContent = "RIGHT!";
+      currentQuestion++
+      displayCurrentQuestion();
+    } else {
       messageToUser.textContent = "WRONG!";
       currentQuestion++
       displayCurrentQuestion();
     }
- });
+ }); // end of check button B
  
+    // check button C
+     answerCEl.addEventListener("click", function(){
+      if (answerCEl.id === questionArray[currentQuestion].correctAnswer){
+      messageToUser.textContent = "RIGHT!";
+      currentQuestion++
+      displayCurrentQuestion();
+    } else {
+      messageToUser.textContent = "WRONG!";
+      currentQuestion++
+      displayCurrentQuestion();
+    }
+ }); // end of check button C
+
+    // check button D
+     answerDEl.addEventListener("click", function(){
+      if (answerDEl.id === questionArray[currentQuestion].correctAnswer){
+      messageToUser.textContent = "RIGHT!";
+      currentQuestion++
+      displayCurrentQuestion();
+    } else {
+      messageToUser.textContent = "WRONG!";
+      currentQuestion++
+      displayCurrentQuestion();
+    }
+ }); // end of check button D
+ 
+ 
+
     
-  };
+  }; // end of CheckAnswers function
 
   checkAnswers();
 
