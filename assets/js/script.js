@@ -4,12 +4,19 @@ var questionArray = [
     {question: "Question3", a: "Q3A1", b:"Q3A2", c: "Q3A3", d: "Q3A4", correctAnswer: 'a'},
     {question: "Question4", a: "Q4A1", b:"Q4A2", c: "Q4A3", d: "Q4A4", correctAnswer: 'a'},
     {question: "Question5", a: "Q5A1", b:"Q5A2", c: "Q5A3", d: "Q5A4", correctAnswer: 'a'},
-
-
 ]; // end of QuestionArray
+
+//Hide instructions
+var instructionsEl = document.getElementById("instructions");
+var startButtonEl = document.getElementById("start-button");
+
+startButtonEl.addEventListener("click", function(){
+ instructionsEl.style.display = "none";
+});
 
 let currentScore = 0;
  let currentQuestion = 0;
+ let score = 0;
 
 
 // Timer
