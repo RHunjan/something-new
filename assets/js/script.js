@@ -1,37 +1,80 @@
 var questionArray = [
-    {question: "Question1", answerOptions: ["answer1","answer111", "answer1111", "answer11111"], right: 0},
-    {question: "Question2", answerOptions: ["answer12","answer112", "answer1112", "answer11112"], right: 0},
-    {question: "Question3", answerOptions: ["answer13","answer113", "answer1113", "answer11113"], right: 0},
-    {question: "Question4", answerOptions: ["answer14","answer114", "answer1114", "answer11114"], right: 0},
-     {question:"Question5", answerOptions: ["answer15","answer115", "answer1114", "answer11115"], right: 0}
+    {question: "Question1", a: "Q1A1", b:"Q1A2", c: "Q1A3", d: "Q1A4", correctAnswer: 'b'},
+    {question: "Question2", a: "Q2A1", b:"Q2A2", c: "Q2A3", d: "Q2A4", correctAnswer: 'b'},
+    {question: "Question3", a: "Q3A1", b:"Q3A2", c: "Q3A3", d: "Q3A4", correctAnswer: 'a'},
+    {question: "Question4", a: "Q4A1", b:"Q4A2", c: "Q4A3", d: "Q4A4", correctAnswer: 'a'},
+    {question: "Question5", a: "Q5A1", b:"Q5A2", c: "Q5A3", d: "Q5A4", correctAnswer: 'a'},
+
 
 ]; // end of QuestionArray
 
-// identify DOM elements
-var questionToAsk = document.querySelector(".questionAsked");
-var listOfAnswers = document.querySelector(".potential-answers");
+let currentScore = 0;
+ let currentQuestion = 0;
+
+// Timer
+  var timeEl = document.getElementById("timer");
+  var initialMinutes = 5;
+  let timeSeconds = initialMinutes *60;
+
+  var countDown = function(){
+    let minutes = Math.floor(timeSeconds / 60);
+    let seconds = Math.floor(timeSeconds % 60);
+      if (seconds <10) {
+        seconds = '0' + seconds;
+      } else {
+        seconds = seconds;
+      }
+    timeEl.innerHTML = `${minutes}: ${seconds}`;
+    timeSeconds--;
+  };
+
+  setInterval(countDown, 1000);
+   
+ //Displaying the question
+
+ var questionDisplayed = document.getElementById("questionAsked");
+  var answerAEl = document.getElementById("a");
+ var answerBEl = document.getElementById("b");
+ var answerCEl = document.getElementById("c");
+ var answerDEl = document.getElementById("d");
  
- // turn each question into an object
+// Display current question
 
- var eachQuestion = function(array){
+var displayCurrentQuestion = function(){
+   questionDisplayed.textContent = questionArray[currentQuestion].question
+  answerAEl.textContent = questionArray[currentQuestion].a;
+  answerBEl.textContent = questionArray[currentQuestion].b;
+  answerCEl.textContent = questionArray[currentQuestion].c;
+  answerDEl.textContent = questionArray[currentQuestion].d;
 
-    //display question
-    questionToAsk.textContent = questionArray[0].question;
-    var answerArray = questionArray[0].answerOptions;
-    console.log(answerArray);
-    // list the answers
-    for (let i=0; i<answerArray.length; i++){
-       var anAnswer = document.createElement("li");
-    anAnswer.textContent = answerArray[i];
-    console.log(anAnswer);
-    listOfAnswers.appendChild(anAnswer);
+};
+
+// check answers
+  var checkAnswers = function(){
+
+    var messageToUser = document.getElementById("message");
+     answerAEl.addEventListener("click", function(){
+    //console.log(answerAEl.id);
+    //console.log(questionArray[currentQuestion].correctAnswer)
+    if (answerAEl.id === questionArray[currentQuestion].correctAnswer){
+      console.log('correct')
+      messageToUser.textContent = "RIGHT!";
+      currentQuestion++
+       displayCurrentQuestion();
+    } else {
+      console.log('incorrect');
+      messageToUser.textContent = "WRONG!";
+      currentQuestion++
+      displayCurrentQuestion();
     }
-
-       
+ });
  
-
-  
     
- }; // end of function eachQuestion
+  };
 
- eachQuestion(questionArray);
+  checkAnswers();
+
+
+
+
+ 
