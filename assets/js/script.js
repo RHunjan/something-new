@@ -25,7 +25,7 @@ var questionContainerEl = document.querySelector(".question-container");
 var startTimer = function(){
   // Timer
   var timeEl = document.getElementById("timer");
-  var initialMinutes = 5;
+  var initialMinutes = 2;
   timeSeconds = initialMinutes *60;
  
   var countDown = function(){
@@ -102,6 +102,7 @@ var startTimer = function(){
       
       } else {
         messageEl.textContent = "WRONG!";
+        timeSeconds = timeSeconds -15;
       }
         nextQuestion();
     };
@@ -110,7 +111,7 @@ var startTimer = function(){
 
   var nextQuestion = function(){
     console.log(currentQuestion);
-    if (currentQuestion < 9){
+    if (currentQuestion < 9 && timeSeconds > 0){
        currentQuestion++;
       console.log(currentQuestion);
       showQuestion(currentQuestion);
