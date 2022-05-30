@@ -99,7 +99,7 @@ var startTimer = function(){
       if (x.id === questionArray[currentQuestion].correctAnswer){
         messageEl.textContent = "RIGHT!";
         score = score+10;
-        console.log(score);
+      
       } else {
         messageEl.textContent = "WRONG!";
       }
@@ -115,12 +115,17 @@ var startTimer = function(){
       console.log(currentQuestion);
       showQuestion(currentQuestion);
        } else {
-      messageEl.textContent = "Finished!"
+         console.log(score);
+        finalScore();
     }
    
   };
 
-
+  var finalScoreEl = document.getElementById("final-score");
+    var finalScore = function(){
+       finalScoreEl.textContent = `Thanks for playing! Your final score is ${score}`;
+    };
+ 
 
 
 
