@@ -4,6 +4,11 @@ var questionArray = [
     {question: "Question3", a: "Q3A1", b:"Q3A2", c: "Q3A3", d: "Q3A4", correctAnswer: 'c'},
     {question: "Question4", a: "Q4A1", b:"Q4A2", c: "Q4A3", d: "Q4A4", correctAnswer: 'd'},
     {question: "Question5", a: "Q5A1", b:"Q5A2", c: "Q5A3", d: "Q5A4", correctAnswer: 'a'},
+    {question: "Question6", a: "Q1A1", b:"Q1A2", c: "Q1A3", d: "Q1A4", correctAnswer: 'a'},
+    {question: "Question7", a: "Q2A1", b:"Q2A2", c: "Q2A3", d: "Q2A4", correctAnswer: 'b'},
+    {question: "Question8", a: "Q3A1", b:"Q3A2", c: "Q3A3", d: "Q3A4", correctAnswer: 'c'},
+    {question: "Question9", a: "Q4A1", b:"Q4A2", c: "Q4A3", d: "Q4A4", correctAnswer: 'd'},
+    {question: "Question10", a: "Q5A1", b:"Q5A2", c: "Q5A3", d: "Q5A4", correctAnswer: 'a'},
 ]; // end of QuestionArray
 
 //Hide instructions
@@ -13,8 +18,6 @@ var startButtonEl = document.getElementById("start-button");
 // Show quiz
 
 var questionContainerEl = document.querySelector(".question-container");
-
-
 
 //global time variables
   let timeSeconds = 0;
@@ -62,27 +65,29 @@ var startTimer = function(){
     answerCEl.textContent = questionArray[currentQuestion].c;
     answerDEl.textContent = questionArray[currentQuestion].d;
 
+  }; // end of first question
+
     // add click events to a,b,c,d buttons
-    // button a
+
+       // button a
     answerAEl.addEventListener("click", function(){
       console.log('purple');
       checkAnswers(answerAEl);
     });
-  
 
-      //button b
+    //button b
      answerBEl.addEventListener("click", function(){
       console.log('blue');
       checkAnswers(answerBEl);
     });
 
-    //button c
+       //button c
      answerCEl.addEventListener("click", function(){
       console.log('green');
       checkAnswers(answerCEl);
     });
 
-    // button d
+       // button d
      answerDEl.addEventListener("click", function(){
       console.log('yellow');
      checkAnswers(answerDEl);
@@ -93,27 +98,30 @@ var startTimer = function(){
     var checkAnswers = function(x){
       if (x.id === questionArray[currentQuestion].correctAnswer){
         messageEl.textContent = "RIGHT!";
+        score = score+10;
+        console.log(score);
       } else {
         messageEl.textContent = "WRONG!";
       }
-      currentQuestion++;
-      console.log(currentQuestion);
-   
-
+        nextQuestion();
     };
-
-
-
-  }; // end of first question
 
   //move to next question
 
   var nextQuestion = function(){
-    showQuestion();
+    console.log(currentQuestion);
+    if (currentQuestion < 9){
+       currentQuestion++;
+      console.log(currentQuestion);
+      showQuestion(currentQuestion);
+       } else {
+      messageEl.textContent = "Finished!"
+    }
+   
   };
 
 
-  //var nextQuestion = function(){};
+
 
 
 
