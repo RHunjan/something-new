@@ -25,7 +25,7 @@ var questionContainerEl = document.querySelector(".question-container");
 var startTimer = function(){
   // Timer
   var timeEl = document.getElementById("timer");
-  var initialMinutes = 2;
+  var initialMinutes = 1;
   timeSeconds = initialMinutes *60;
  
   var countDown = function(){
@@ -38,9 +38,19 @@ var startTimer = function(){
       }
     timeEl.innerHTML = `${minutes}: ${seconds}`;
     timeSeconds--;
-     };
+
+    if (timeSeconds<=0){
+      timeEl.style.display = 'none';
+      finalScore();
+      return;
+    }
+      };
+
   setInterval(countDown, 1000);
 
+  
+
+  
   }; // end of start timer
 
   
@@ -124,6 +134,9 @@ var startTimer = function(){
 
   var finalScoreEl = document.getElementById("final-score");
     var finalScore = function(){
+ 
+       questionContainerEl.style.display = "none";
+     
        finalScoreEl.textContent = `Thanks for playing! Your final score is ${score}`;
     };
  
