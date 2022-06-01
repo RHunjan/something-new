@@ -141,16 +141,29 @@ var startTimer = function(){
        finalScoreEl.textContent = `Thanks for playing! Your final score is ${score}`;
     };
 
-    var saveNameEl = document.querySelector("input").value;
-    var saveScoreEl = document.getElementById("save-score");
+    // Save high scores
+     var nameButtonEl = document.getElementById("save-score");
+  
+    var highScoreArray = [];
+    nameButtonEl.addEventListener("click", function(){
+      var playerNameEl = document.querySelector("input").value;
+      var playerObject = {
+        savedScore: score,
+        savedName: playerNameEl}
+      highScoreArray.push(playerObject);
+      localStorage.setItem('high-score', JSON.stringify(highScoreArray));
+      console.log(highScoreArray);
 
-      var test = function(){
-        let jim = '5';
-        localStorage.setItem('jim', jim);
-        console.log(localStorage.getItem('jim'))
-      };
+    });
 
-      test();
+
+     // var test = function(){
+      //  let jim = '5';
+     //   localStorage.setItem('jim', jim);
+     //   console.log(localStorage.getItem('jim'))
+     // };
+//
+      //test();
 
 
 
