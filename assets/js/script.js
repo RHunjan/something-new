@@ -109,6 +109,7 @@ var startTimer = function(){
       if (x.id === questionArray[currentQuestion].correctAnswer){
         messageEl.textContent = "RIGHT!";
         score = score+10;
+        
       
       } else {
         messageEl.textContent = "WRONG!";
@@ -139,7 +140,17 @@ var startTimer = function(){
      
        finalScoreEl.textContent = `Thanks for playing! Your final score is ${score}`;
     };
- 
+
+    var saveNameEl = document.querySelector("input").value;
+    var saveScoreEl = document.getElementById("save-score");
+
+      var test = function(){
+        let jim = '5';
+        localStorage.setItem('jim', jim);
+        console.log(localStorage.getItem('jim'))
+      };
+
+      test();
 
 
 
