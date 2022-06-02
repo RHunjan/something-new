@@ -1,14 +1,14 @@
 var questionArray = [
-    {question: "Question1", a: "Q1A1", b:"Q1A2", c: "Q1A3", d: "Q1A4", correctAnswer: 'a'},
-    {question: "Question2", a: "Q2A1", b:"Q2A2", c: "Q2A3", d: "Q2A4", correctAnswer: 'b'},
-    {question: "Question3", a: "Q3A1", b:"Q3A2", c: "Q3A3", d: "Q3A4", correctAnswer: 'c'},
-    {question: "Question4", a: "Q4A1", b:"Q4A2", c: "Q4A3", d: "Q4A4", correctAnswer: 'd'},
-    {question: "Question5", a: "Q5A1", b:"Q5A2", c: "Q5A3", d: "Q5A4", correctAnswer: 'a'},
-    {question: "Question6", a: "Q1A1", b:"Q1A2", c: "Q1A3", d: "Q1A4", correctAnswer: 'a'},
-    {question: "Question7", a: "Q2A1", b:"Q2A2", c: "Q2A3", d: "Q2A4", correctAnswer: 'b'},
-    {question: "Question8", a: "Q3A1", b:"Q3A2", c: "Q3A3", d: "Q3A4", correctAnswer: 'c'},
-    {question: "Question9", a: "Q4A1", b:"Q4A2", c: "Q4A3", d: "Q4A4", correctAnswer: 'd'},
-    {question: "Question10", a: "Q5A1", b:"Q5A2", c: "Q5A3", d: "Q5A4", correctAnswer: 'a'},
+    {question: "Javascript is an _______ language?", a: "Object-Oriened", b:"Object-Based", c: "Procedural", d: "none", correctAnswer: 'a'},
+    {question: "Which of the following keywords is used to define a variable in Javascript?", a: "var", b:"let", c: "Both", d: "none", correctAnswer: 'c'},
+    {question: "Which of the following methods is used to access HTML elements using Javascript?", a: "getElementById()", b:"getElementsbyClassName()", c: "Both", d: "none", correctAnswer: 'c'},
+    {question: "Upon encountering empty statements, what does the Javascript Interpreter do?", a: "Trows an error", b:"Ignores the statement", c: "Gives a warning", d: "none", correctAnswer: 'b'},
+    {question: "How can a datatype be declared to be a constant type?", a: "const", b:"let", c: "var", d: "constant", correctAnswer: 'a'},
+    {question: "What keyword is used to check whether a given property is valid or not?", a: "in", b:"is in", c: "exists", d: "lies", correctAnswer: 'a'},
+    {question: "Which function is used to serialize an object into a JSON string in Javascript?", a: "stringify()", b:"parse()", c: "convert()", d: "none of the above", correctAnswer: 'b'},
+    {question: "Which of the following is not a Javascript framework?", a: "Node", b:"Vue", c: "React", d: "Cassandra", correctAnswer: 'd'},
+    {question: "What keyword is used to declare an asynchronous function in Javascript?", a: "async", b:"await", c: "setTimeout", d: "None of the Above", correctAnswer: 'a'},
+    {question: "How to stop an interval timer in Javascript?", a: "clearInterval", b:"clearTimer", c: "intervalOver", d: "none", correctAnswer: 'a'},
 ]; // end of QuestionArray
 
 //Hide instructions
