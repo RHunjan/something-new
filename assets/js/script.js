@@ -152,10 +152,49 @@ var startTimer = function(){
         savedName: playerNameEl}
       highScoreArray.push(playerObject);
       localStorage.setItem('high-score', JSON.stringify(highScoreArray));
-      console.log(highScoreArray);
+      highScoreArray = localStorage.getItem('high-score');
+      highScoreArray = JSON.parse(highScoreArray);
+      //console.log(highScoreArray);
+      listHighScore();
+      
+     });
 
-    });
+      
+     // list the items
+     var listHighScore = function(){
+       debugger;
+        
+         for (i=0; i<highScoreArray.length; i++){
+           var highScoreListEl = document.getElementById("high-score-list");
+           let scoreItem = document.createElement('li');
+           scoreItem.innerHTML = highScoreArray[i].savedName;
+           highScoreListEl.appendChild(scoreItem);
+          
+         }
+        
+   
+       
+            
+       
+      
+     };
+    
+    
+   
+    // play again
 
+    var playAgainButtonEl = document.getElementById("play-again");
+    playAgainButtonEl.addEventListener("click", function(){
+      currentQuestion = 0;
+       // hide instructions
+      instructionsEl.style.display = "none";
+      // show quiz
+      questionContainerEl.style.display = "block";
+       // start timer
+      startTimer();
+      // show first question
+      showQuestion();
+    } )
 
      // var test = function(){
       //  let jim = '5';
