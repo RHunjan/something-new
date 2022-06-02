@@ -1,5 +1,5 @@
 var questionArray = [
-    {question: "Javascript is an _______ language?", a: "Object-Oriened", b:"Object-Based", c: "Procedural", d: "none", correctAnswer: 'a'},
+    {question: "Javascript is an _______ language?", a: "Object-Oriented", b:"Object-Based", c: "Procedural", d: "none", correctAnswer: 'a'},
     {question: "Which of the following keywords is used to define a variable in Javascript?", a: "var", b:"let", c: "Both", d: "none", correctAnswer: 'c'},
     {question: "Which of the following methods is used to access HTML elements using Javascript?", a: "getElementById()", b:"getElementsbyClassName()", c: "Both", d: "none", correctAnswer: 'c'},
     {question: "Upon encountering empty statements, what does the Javascript Interpreter do?", a: "Trows an error", b:"Ignores the statement", c: "Gives a warning", d: "none", correctAnswer: 'b'},
@@ -25,7 +25,7 @@ var questionContainerEl = document.querySelector(".question-container");
 var startTimer = function(){
   // Timer
   var timeEl = document.getElementById("timer");
-  var initialMinutes = 1;
+  var initialMinutes = 10;
   timeSeconds = initialMinutes *60;
  
   var countDown = function(){

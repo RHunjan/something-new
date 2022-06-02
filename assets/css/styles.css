@@ -1,10 +1,83 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+  /*quiz*/
+
+#instructions {
+    text-align: center;
+}
+
+  #instructions h2 {
+    padding: 40px;
+    width: 100%;
+    text-align: center;
+    
+
+  }
+  
+  #start-button {
+  
+        background-color: blue;
+        /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        width: 80%;
+          }
+
+.question-container p {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#message {
+    font-size: 30px;
+}
+
+.answer-buttons {
+        background-color: blue;
+        border: none;
+        border-radius: 25;
+        color: white;
+        padding: 15px 32px;
+        margin: 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        width: 80%;
+        align-items: center;
+
+}
+
+#final-score {
+    font-size: 30px;
+    margin-top: 25px;
+}
+  /*hide / display different sections*/
 .question-container {
-   
+    
     display: none;
 }
 
+
+
 .final-score {
-    display: block;
+    display: none;
 }
 
- 
+.high-scores {
+    display: none;
+}
+
+.form-group {
+    display: none;
+}
