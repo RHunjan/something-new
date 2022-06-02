@@ -11,7 +11,7 @@ var questionArray = [
     {question: "How to stop an interval timer in Javascript?", a: "clearInterval", b:"clearTimer", c: "intervalOver", d: "none", correctAnswer: 'a'},
 ]; // end of QuestionArray
 
-//Hide instructions
+//Hide the instructions
 var instructionsEl = document.getElementById("instructions");
 var startButtonEl = document.getElementById("start-button");
 
