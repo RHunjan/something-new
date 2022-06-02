@@ -133,12 +133,18 @@ var startTimer = function(){
    
   };
 
+    // show final score
   var finalScoreEl = document.getElementById("final-score");
+  var formEl = document.querySelector(".form-group");
+  var formScores = document.querySelector('.high-scores');
     var finalScore = function(){
  
        questionContainerEl.style.display = "none";
      
        finalScoreEl.textContent = `Thanks for playing! Your final score is ${score}`;
+       formEl.style.display = "block";
+       
+
     };
 
     // Save high scores
@@ -156,14 +162,16 @@ var startTimer = function(){
       highScoreArray = JSON.parse(highScoreArray);
       //console.log(highScoreArray);
       listHighScore();
+      formScores.style.display = "block";
+      playerNameEl.textContent = '';
+
       
      });
 
       
      // list the items
      var listHighScore = function(){
-       debugger;
-        
+           
          for (i=0; i<highScoreArray.length; i++){
            var highScoreListEl = document.getElementById("high-score-list");
            let scoreItem = document.createElement('li');
@@ -188,8 +196,11 @@ var startTimer = function(){
       currentQuestion = 0;
        // hide instructions
       instructionsEl.style.display = "none";
-      // show quiz
+      // hide high scores
+      formEl.style.display = "none";
+      finalScoreEl.style.display = "none";
       questionContainerEl.style.display = "block";
+      messageEl.textContent = '';
        // start timer
       startTimer();
       // show first question
