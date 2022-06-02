@@ -15,7 +15,7 @@ var questionArray = [
 var instructionsEl = document.getElementById("instructions");
 var startButtonEl = document.getElementById("start-button");
 
-// Show quiz
+// Show quiz info
 
 var questionContainerEl = document.querySelector(".question-container");
 
@@ -25,7 +25,7 @@ var questionContainerEl = document.querySelector(".question-container");
 var startTimer = function(){
   // Timer
   var timeEl = document.getElementById("timer");
-  var initialMinutes = 10;
+  var initialMinutes = 2;
   timeSeconds = initialMinutes *60;
  
   var countDown = function(){
